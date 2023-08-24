@@ -3,19 +3,18 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
-
 }
 
 android {
-    namespace = "jp.hana897trx.animeapp"
-    compileSdk = 33
+    namespace = ConfigApp.Namespace.NAMESPACE_APP
+    compileSdk = ConfigApp.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "jp.hana897trx.animeapp"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = ConfigApp.APP_ID
+        minSdk = ConfigApp.MIN_SDK
+        targetSdk = ConfigApp.TARGET_SDK
+        versionCode = ConfigApp.APP_VERSION_CODE
+        versionName = ConfigApp.APP_VERSION
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -30,11 +29,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = ConfigApp.SOURCE_COMPAT
+        targetCompatibility = ConfigApp.TARGET_COMPAT
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = ConfigApp.JVM_TARGET
     }
 }
 

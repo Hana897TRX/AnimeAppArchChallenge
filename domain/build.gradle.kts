@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "jp.hana897trx.domain"
-    compileSdk = 33
+    namespace = ConfigApp.Namespace.NAMESPACE_DOMAIN
+    compileSdk = ConfigApp.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 24
+        minSdk = ConfigApp.MIN_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -24,20 +24,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = ConfigApp.SOURCE_COMPAT
+        targetCompatibility = ConfigApp.TARGET_COMPAT
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = ConfigApp.JVM_TARGET
     }
 }
 
 dependencies {
-
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(project(Modules.DATA))
 }

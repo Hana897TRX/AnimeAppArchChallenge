@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "jp.hana897trx.common"
-    compileSdk = 33
+    namespace = ConfigApp.Namespace.NAMESPACE_COMMON
+    compileSdk = ConfigApp.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 24
+        minSdk = ConfigApp.MIN_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -24,11 +24,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = ConfigApp.SOURCE_COMPAT
+        targetCompatibility = ConfigApp.TARGET_COMPAT
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = ConfigApp.JVM_TARGET
     }
 }
 
