@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--Home carrousel-->
+    <dimen name="home_height_carrousel">200dp</dimen>
+    <dimen name="home_border_radius_carrousel">16dp</dimen>
+    <dimen name="background_text_black">8dp</dimen>
+    <dimen name="min_height_single_line_text">32dp</dimen>
+    <dimen name="stroke_views">2dp</dimen>
+</resources>
