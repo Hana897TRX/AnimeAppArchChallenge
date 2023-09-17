@@ -1,10 +1,10 @@
 import org.gradle.api.JavaVersion
 
 object ConfigApp {
-    const val COMPILE_SDK = 33
+    const val COMPILE_SDK = 34
     const val MIN_SDK = 24
     const val JVM_TARGET = "17"
-    const val TARGET_SDK = 33
+    const val TARGET_SDK = 34
     val SOURCE_COMPAT = JavaVersion.VERSION_17
     val TARGET_COMPAT = JavaVersion.VERSION_17
 
