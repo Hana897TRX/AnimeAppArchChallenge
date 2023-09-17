@@ -4,31 +4,59 @@ import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
+import jp.hana897trx.appcore.R
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
+    primary = Black,
     secondary = PurpleGrey80,
     tertiary = Pink80,
-    background = Color.Black,
-    onBackground = Color.Black,
+    background = Black,
+    surface = Black,
+    onBackground = Black,
+    onSurface = Black,
+)
+
+private val fonts = FontFamily(
+    Font(R.font.k2d_bold, FontWeight.Bold),
+    Font(R.font.k2d_light, FontWeight.Light),
+    Font(R.font.k2d_medium, FontWeight.Medium),
+    Font(R.font.k2d_regular, FontWeight.Normal),
+)
+
+private val typography = Typography(
+    bodyMedium = TextStyle(
+        fontFamily = fonts,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+    ),
+    titleMedium = TextStyle(
+        fontFamily = fonts,
+        fontWeight = FontWeight.Bold,
+        fontSize = 24.sp,
+    )
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40,
-    background = Color.Black,
+    background = Black,
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -44,7 +72,6 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun AnimeAppChallengeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
@@ -55,7 +82,7 @@ fun AnimeAppChallengeTheme(
         }
 
         darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        else -> DarkColorScheme
     }
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -68,7 +95,27 @@ fun AnimeAppChallengeTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = typography,
+        content = content
+    )
+}
+
+@Composable
+fun HarmonyTheme(
+    content: @Composable () -> Unit,
+) {
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        SideEffect {
+            val window = (view.context as Activity).window
+            window.statusBarColor = DarkColorScheme.primary.toArgb()
+            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = true
+        }
+    }
+
+    MaterialTheme(
+        colorScheme = DarkColorScheme,
+        typography = typography,
         content = content
     )
 }
