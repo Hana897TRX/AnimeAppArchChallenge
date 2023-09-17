@@ -14,7 +14,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "animeAppChallenge"
-include(":app")
 include(":data")
 include(":domain")
 include(":common")
+include(":appcore")

@@ -8,6 +8,6 @@ import jp.hana897trx.animeapp.databinding.HomeCarrouselLayoutBinding
 class HomeCarrousel(ctx: Context, attrs: AttributeSet) : ConstraintLayout(ctx, attrs) {
     private var binding: HomeCarrouselLayoutBinding?= null
     init {
-        inflate()
+
     }
 }
