@@ -18,3 +18,4 @@ local.properties
 /common/build
 /data/build
 /domain/build
+/.idea/*

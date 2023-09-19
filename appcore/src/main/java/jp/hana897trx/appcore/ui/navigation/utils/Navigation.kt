@@ -1,4 +1,4 @@
-package jp.hana897trx.appcore.ui.navigation
+package jp.hana897trx.appcore.ui.navigation.utils
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -8,8 +8,8 @@ import jp.hana897trx.appcore.ui.screens.HomeScreen
 
 @Composable
 fun navigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = "home") {
-        composable("home") {
+    NavHost(navController = navController, startDestination = Paths.Home.path) {
+        composable(Paths.Home.path) {
             HomeScreen()
         }
     }
