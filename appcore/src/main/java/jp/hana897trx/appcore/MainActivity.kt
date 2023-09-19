@@ -3,43 +3,22 @@ package jp.hana897trx.appcore
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import jp.hana897trx.appcore.ui.theme.AnimeAppChallengeTheme
+import androidx.navigation.compose.rememberNavController
+import jp.hana897trx.appcore.ui.navigation.utils.navigation
+import jp.hana897trx.appcore.ui.theme.HarmonyTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AnimeAppChallengeTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+            HarmonyTheme {
+                Surface(contentColor = MaterialTheme.colorScheme.surface) {
+                    val navController = rememberNavController()
+                    navigation(navController = navController)
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name! compose",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AnimeAppChallengeTheme {
-        Greeting("Android")
     }
 }

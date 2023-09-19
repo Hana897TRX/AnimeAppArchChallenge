@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+/buildSrc/build
+/appcore/build
+/common/build
+/data/build
+/domain/build
+/.idea/*
