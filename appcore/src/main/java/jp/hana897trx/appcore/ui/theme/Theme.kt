@@ -32,7 +32,7 @@ private val DarkColorScheme = darkColorScheme(
     onSurface = Black,
 )
 
-private val fonts = FontFamily(
+val fonts = FontFamily(
     Font(R.font.k2d_bold, FontWeight.Bold),
     Font(R.font.k2d_light, FontWeight.Light),
     Font(R.font.k2d_medium, FontWeight.Medium),

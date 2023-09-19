@@ -20,7 +20,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import jp.hana897trx.appcore.R
-import jp.hana897trx.appcore.ui.theme.Values
+import jp.hana897trx.appcore.ui.theme.values.Colors
+import jp.hana897trx.appcore.ui.theme.values.Values
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

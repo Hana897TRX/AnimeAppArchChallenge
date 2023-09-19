@@ -1,4 +1,4 @@
-package jp.hana897trx.appcore.ui.theme
+package jp.hana897trx.appcore.ui.theme.values
 
 import androidx.compose.ui.unit.dp
 
